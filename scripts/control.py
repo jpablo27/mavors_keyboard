@@ -17,7 +17,7 @@ def control():
 	rospy.Subscriber("/keyboard/keydown",Key,down)
 	rospy.Subscriber("/keyboard/keyup",Key,up)
 	rospy.Subscriber("/mavros/local_position/pose",PoseStamped,pose)
-	pub = rospy.Publisher('/mavros/setpoint_velocity/cmd_vel',TwistStamped, queue_size = )
+	pub = rospy.Publisher('/mavros/setpoint_velocity/cmd_vel',TwistStamped, queue_size = 1)
 	rospy.init_node('control', anonymous=True)
 	rate = rospy.Rate(10) # 10hz
 	while not rospy.is_shutdown():
